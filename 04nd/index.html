@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>抽奖程序</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div id="main">
+			<table id="biaoge">
+			<caption><h1>抽奖系统</h1></caption>
+			<tr><th>一等奖</th><td></td></tr>
+			<tr><th>二等奖</th><td></td><td></td></tr>
+			<tr><th>三等奖</th><td></td><td></td><td></td></tr>
+		</table>
+		<div>
+			<input type="button" name="to" id="to" value="抽奖" />
+		</div>
+		</div>	
+		<script type="text/javascript">
+			var oTd=document.querySelectorAll("#biaoge td");
+			var oSuijizhi=new Array(5);
+			var oChoujiang=document.getElementById('to');
+			oChoujiang.addEventListener("click",jiang);
+			function jiang () {
+				for (var i=0;i<6;i++) {
+				oSuijizhi[i]=Math.floor(Math.random()*44+1);
+				for(var j=0;j<i;j++){
+					if(oSuijizhi[i]==oSuijizhi[j]){
+						i--;
+						console.log(oSuijizhi[i]);
+						break;						
+					}
+				}
+				oTd[i].innerHTML=oSuijizhi[i];
+				}
+			}
+		</script>
+	</body>
+</html>

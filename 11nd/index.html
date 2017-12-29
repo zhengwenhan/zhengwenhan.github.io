@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>模拟对话框</title>
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<style type="text/css">
+			a{
+				text-decoration: none;
+				margin-left: 600px;
+			}
+			#windows1 {
+				cursor: pointer;
+			}
+			
+			#windows3 {
+				cursor: pointer;
+				display: none;
+				width: 500px;
+				height: 500px;
+				margin-left: 400px;
+				margin-top: 200px;
+				background: deepskyblue;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="wrap">
+			<div id="cen"></div>
+		</div>
+
+		<div id="windows1">
+			<a href="#">打开模拟窗口</a>
+
+		</div>
+		<div id="windows2">
+			<i class="fa fa-close" id="windows3"></i>
+		</div>
+		<script type="text/javascript">
+			var Owindows1 = document.getElementById("windows1");
+			var Owindows2 = document.getElementById("windows2");
+			var Owindows3 = document.getElementById("windows3");
+			Owindows1.addEventListener("click", function() {
+				Owindows2.classList.toggle("windows");
+				Owindows3.style.display = "block";
+			});
+			Owindows3.addEventListener("click", function() {
+				Owindows2.classList.toggle("windows");
+				Owindows3.style.display = "none";
+			});
+		</script>
+	</body>
+
+</html>

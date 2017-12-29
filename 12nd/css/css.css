@@ -1,0 +1,81 @@
+a {
+	position: relative;
+	display: inline-block;
+	margin: 20px;
+	text-decoration: none;
+	color: blue;
+}
+
+span {
+	display: none;
+	width: 100px;
+	position: absolute;
+	top: -30px;
+	left: -30px;
+	background: red;
+	color: green;
+	text-align: center;
+}
+
+a:hover span {
+	display: block;
+}
+
+.toolitp span::after {
+	content: " ";
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+.toolitp[data-direction="top"] span::after {
+	top: 100%;
+	left: 40%;
+	border: 8px solid #000;
+	border-color: black transparent transparent;
+}
+
+.toolitp[data-direction="botton"] span {
+	top: 30px;
+	left: -30px;
+	background: black;
+	color: white;
+	text-align: center;
+}
+
+.toolitp[data-direction="botton"] span::after {
+	top: -75%;
+	left: 38%;
+	border: 8px solid #000;
+	border-color: transparent transparent black;
+}
+
+.toolitp[data-direction="left"] span {
+	top: 0px;
+	left: -90px;
+	background: black;
+	color: white;
+	text-align: center;
+}
+
+.toolitp[data-direction="left"] span::after {
+	top: 3px;
+	left: 80px;
+	border: 8px solid #000;
+	border-color: transparent transparent transparent black;
+}
+
+.toolitp[data-direction="right"] span {
+	top: 0px;
+	left: 30px;
+	background: black;
+	color: white;
+	text-align: center;
+}
+
+.toolitp[data-direction="right"] span::after {
+	top: 3px;
+	left: -16px;
+	border: 8px solid #000;
+	border-color: transparent black transparent transparent;
+}
